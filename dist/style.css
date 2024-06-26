@@ -1,7 +1,7 @@
 :root {
   --m-blue: hsl(246, 80%, 60%);
   --l-blue: hsl(195, 74%, 62%);
-  --l-red: hsl(15, 100%, 70%);
+  --l-orange: hsl(15, 100%, 70%);
   --m-red: hsl(348, 100%, 68%);
   --l-green: hsl(145, 58%, 55%);
   --l-purple: hsl(264, 64%, 52%);
@@ -10,6 +10,9 @@
   --d-blue: hsl(235, 46%, 20%);
   --g-blue: hsl(235, 45%, 61%);
   --p-blue: hsl(236, 100%, 87%);
+  --white: hsl(0, 0%, 100%);
+  --b-radius: 15px;
+  --f-width: 69.375rem;
 }
 
 *, *::before, *::after {
@@ -22,9 +25,10 @@ body {
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 400;
+  background-color: var(--dd-blue);
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
   margin: 0;
 }
 
@@ -39,4 +43,230 @@ ul {
 
 img {
   display: block;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: clamp(1.5rem, 0.9897959184rem + 2.1768707483vw, 2.5rem);
+  line-height: 1.3;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: clamp(2rem, 1.2346938776rem + 3.2653061224vw, 3.5rem);
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 0.938rem;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.wrapper {
+  max-width: var(--f-width);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+.wrapper .profile-box, .wrapper .tracking-box {
+  color: var(--white);
+  background-color: var(--d-blue);
+  border-radius: var(--b-radius);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  transition: all 0.2s ease-in-out;
+}
+.wrapper .profile-box:hover, .wrapper .tracking-box:hover {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 6px 20px;
+}
+.wrapper .profile-box a, .wrapper .tracking-box a {
+  color: var(--g-blue);
+  transition: all 0.2s ease-in-out;
+}
+.wrapper .profile-box a:hover, .wrapper .tracking-box a:hover {
+  color: var(--white);
+}
+.wrapper .profile-box a.current, .wrapper .tracking-box a.current {
+  color: var(--white);
+  cursor: default;
+}
+.wrapper .profile-box {
+  width: 100%;
+}
+.wrapper .profile-box .profile {
+  padding: 1.875rem 1.5625rem;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--m-blue);
+  border-radius: var(--b-radius);
+}
+.wrapper .profile-box .profile img {
+  max-width: 4.0625rem;
+  max-height: 4.0625rem;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}
+.wrapper .profile-box .profile .profile-user {
+  margin-top: 8px;
+  margin-left: 20px;
+}
+.wrapper .profile-box .navigation {
+  padding: 20px;
+}
+.wrapper .profile-box .navigation ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.wrapper .tracking-box {
+  width: 100%;
+}
+.wrapper .tracking-box .deco {
+  width: 100%;
+  height: 3.4375rem;
+  border-radius: var(--b-radius) var(--b-radius) 0 0;
+  background-repeat: no-repeat;
+  background-position: center right 20px;
+}
+.wrapper .tracking-box .tracking-body {
+  padding: 30px 25px 10px;
+  position: relative;
+  top: -15px;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--b-radius);
+  background-color: var(--d-blue);
+}
+.wrapper .tracking-box .tracking-body .tracking-nav, .wrapper .tracking-box .tracking-body .tracking-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .tracking-box .tracking-body .tracking-nav img {
+  cursor: pointer;
+}
+.wrapper .tracking-box .tracking-body .tracking-nav img:hover {
+  filter: brightness(1100%);
+}
+.wrapper .tracking-box .tracking-body .tracking-info #time-previous {
+  color: var(--p-blue);
+}
+.wrapper .work .deco {
+  background-color: var(--l-orange);
+  background-image: url(../assets/images/icon-work.svg);
+}
+.wrapper .play .deco {
+  background-color: var(--l-blue);
+  background-image: url(../assets/images/icon-play.svg);
+}
+.wrapper .study .deco {
+  background-color: var(--m-red);
+  background-image: url(../assets/images/icon-study.svg);
+}
+.wrapper .exercise .deco {
+  background-color: var(--l-green);
+  background-image: url(../assets/images/icon-exercise.svg);
+}
+.wrapper .social .deco {
+  background-color: var(--l-purple);
+  background-image: url(../assets/images/icon-social.svg);
+}
+.wrapper .self-care .deco {
+  background-color: var(--l-yellow);
+  background-image: url(../assets/images/icon-self-care.svg);
+}
+
+@media screen and (min-width: 600px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wrapper .profile-box .profile {
+    padding: 1.5625rem 1.25rem;
+    flex-direction: column;
+  }
+  .wrapper .profile-box .profile .profile-user {
+    margin: 20px 0 0;
+  }
+  .wrapper .tracking-box .tracking-body {
+    padding: 35px 30px 20px;
+  }
+  .wrapper .tracking-box .tracking-body .tracking-nav {
+    margin-bottom: 40px;
+  }
+  .wrapper .tracking-box .tracking-body .tracking-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper .tracking-box .tracking-body .tracking-info h2 {
+    margin-bottom: 10px;
+  }
+}
+@media screen and (min-width: 850px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .wrapper .profile-box {
+    grid-row: 1/4;
+  }
+  .wrapper .profile-box .profile {
+    padding: 1.875rem 1.875rem 5rem;
+  }
+  .wrapper .profile-box .profile img {
+    max-width: 4.375rem;
+    max-height: 4.375rem;
+  }
+  .wrapper .profile-box .profile .profile-user {
+    margin: 40px 0 0;
+  }
+  .wrapper .profile-box .navigation {
+    padding: 32px;
+  }
+  .wrapper .profile-box .navigation ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style: none;
+  }
+  .wrapper .profile-box .navigation ul li {
+    margin-bottom: 20px;
+  }
+  .wrapper .profile-box .navigation ul li:last-of-type {
+    margin-bottom: 0;
+  }
+}
+@media screen and (min-width: 1110px) {
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .wrapper .profile-box, .wrapper .tracking-box {
+    width: 255px;
+  }
+  .wrapper .profile-box {
+    grid-row: 1/3;
+  }
+  .wrapper .tracking-box .tracking-body {
+    padding: 25px 25px 20px;
+  }
+  .wrapper .tracking-box .tracking-body .tracking-nav {
+    margin-bottom: 10px;
+  }
+  .wrapper .tracking-box .tracking-body .tracking-info h2 {
+    margin-bottom: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

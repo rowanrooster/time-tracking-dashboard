@@ -1,8 +1,9 @@
 :root {
+    // Colors
     --m-blue: hsl(246, 80%, 60%);
 
     --l-blue: hsl(195, 74%, 62%); // play
-    --l-red: hsl(15, 100%, 70%); // work
+    --l-orange: hsl(15, 100%, 70%); // work
     --m-red: hsl(348, 100%, 68%); // study
     --l-green: hsl(145, 58%, 55%); // exercise
     --l-purple: hsl(264, 64%, 52%); // social
@@ -12,4 +13,11 @@
     --d-blue: hsl(235, 46%, 20%);
     --g-blue: hsl(235, 45%, 61%);
     --p-blue: hsl(236, 100%, 87%);
+
+    --white: hsl(0, 0%, 100%);
+
+    // Utilities
+    --b-radius: 15px;
+    --f-width: 69.375rem; // 1110px wrapper
+
 }

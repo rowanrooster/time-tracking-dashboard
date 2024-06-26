@@ -5,7 +5,7 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 ## Links
 
 - [Frontend Mentor](https://www.frontendmentor.io/profile/rowanrooster)
-- [Live Preview](https://rowanrooster.github.io/newsletter-sign-up/)
+- [Live Preview](https://rowanrooster.github.io/time-tracking-dashboard/)
 
 ## Built with
 
